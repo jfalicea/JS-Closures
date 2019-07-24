@@ -1,0 +1,82 @@
+
+<script>
+// //create a counter: 
+// const counter = function () {
+//     let count = 0
+//     let actuallyCount = function (){   //inner function
+//         count++
+//         return count;
+//     }
+//     return actuallyCount;
+// }
+
+// counter1 = counter();
+// console.log("counter1 "+counter1())
+// console.log("counter1 "+counter1())
+// console.log("counter1 "+counter1())
+// console.log("counter1 "+counter1())
+// console.log(counter1.count = 10)
+// console.log(counter1)
+
+
+// counter2 = counter();
+// console.log("counter2 "+counter2())
+// console.log("counter2 "+counter2())
+// console.log("counter2 "+counter2())
+
+
+/********************************************************
+Counter 2
+Allow the caller of counter to initialize the count to the first argument that's passed in.
+*/
+//create a counter: 
+// const counter = function (count) { //set the count varible to a default value. 
+    
+//     let actuallyCount = function (){   //inner function takes the count parameter as a variable. 
+//         count++
+//         return count;
+//     }
+//     return actuallyCount;
+// }
+
+// const counter1 = counter(4);
+// // console.log(counter1)
+// console.log(counter1())
+// console.log(counter1())
+
+
+/********************************************************
+Counter 3
+Allow the counter to either increment 1 or decrement by 1 by calling the increment and decrement methods, respectively. Note: now the counter needs to return an object rather than a function.
+*/
+
+// create a counter: 
+const counter = function (start) { //set the count varible to a default value. 
+    let count = start; 
+    return{
+        increment : function (){   //inner function takes the count parameter as a variable. 
+            count++;
+            return count;
+        },
+        decrement : function (){
+            count--;
+            return count;
+        }
+    };
+    return count;
+}
+
+let counter1 = counter(4)
+console.log(counter1.increment())     //5
+console.log(counter1.increment())     //6 
+console.log(counter1.increment())     //7
+console.log(counter1.decrement())     //6
+console.log(counter1.decrement())     //5
+console.log(counter1.decrement())     //4
+console.log(counter1.decrement())     //3
+
+// localStorage.setItem('counter', JSON.stringify(counter1.decrement()))
+
+// console.log(JSON.parse(localStorage.remove('counter'))+' LOCAL STORAGE');
+
+</script>
